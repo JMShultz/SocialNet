@@ -1,48 +1,24 @@
 const { Schema, model, Types } = require("mongoose");
 const Time = require('./Time');
 
-const Reactions = new Schema(
-  {
-    reactionId: {
-      
-      type: Schema.Types.ObjectId,
-      
-      default: () => new Types.ObjectId(),
-    },
-
-    reactionBody:String,
-    
-
-    username: String,
-     
-
-    createdAt: {
-      type: Date,
-      default: Date.now,
-      get: (timestamp) => Time(timestamp),
-    },
-  },
-  {
-    toJSON: {
-      getters: true,
-    },
-    id: false,
-  }
-);
 
 const Thoughts = new Schema(
   {
-    thoughtText:String,
+    
+      thoughtText: {
+        type: String,
+        required: "Thought is Required",
+        minlength: 1,
+        maxlength: 280,
+      },
 
-    createdAt: {
-      type: Date,
-      default: Date.now,
-      
-      get: (timestamp) => Time(timestamp),
+   
+
+    username: {
+      type: String,
+      required: true,
     },
-
-    username:String,
-    reactions: [Reactions],
+   
   },
   {
     toJSON: {
