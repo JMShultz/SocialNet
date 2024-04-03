@@ -20,10 +20,6 @@
   
 
 
-https://github.com/JMShultz/SocialNet/assets/149431333/50312cc9-0fea-402c-bd03-b5aeaa3d4fb3
-
-
-
   
   ## License
   MIT
